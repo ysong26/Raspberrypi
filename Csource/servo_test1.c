@@ -11,18 +11,26 @@ int main()
     if(wiringPiSetup()==-1)
     return 1;
 
-    softPwmCreate(SERVO, 0, 200);
+    softPwmCreate(FAN_IA,0,1000);
 
-    while(1)
-    {
-        fputs("select c, r, l, q: ", stdout);
-        scanf("%c", &sel);
-        getchar();
-        if(sel == 'c') softPwmWrite(SERVO,15); // 0 degree
-        else if(sel == 'r') softPwmWrite(SERVO,24); // 90 degree
-        else if(sel == 'l') softPwmWrite(SERVO,5); // -90 degree
-        else if(sel == 'q') return 0;
+    while(1){
+    fputs("select q, w, m, s: ", stdout);
+    scanf("%c", &sel);
+    getchar();
+        
+    if(sel == 'q'){
+        Stop();
     }
-    
+    if(sel == 'w')
+        Weak();
+    }
+
+    if(sel == 'm')
+        Medium();
+    }
+
+    if(sel == 's')
+        Strong();
+    }
     return 0;
 }
