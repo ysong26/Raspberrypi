@@ -3,7 +3,7 @@
 # LED3 : GND(가장 긴 것)
 # LED4 : DATA OUT (다음 LED의 DATA IN으로 연결)
 
-import neopixel, time sys
+import neopixel, time, sys
 
 LED_COUNT =8 # LED갯수
 LED_PIN = 18 #BCM 18(Physical 12) (BCM 10(Physical 19) 일 떈 SPI 사용)
